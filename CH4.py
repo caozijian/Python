@@ -33,3 +33,13 @@ except IOError:
 finally:
     man_file.close()
     other_file.close()
+
+try:
+    data = open('mising.txt')
+    print(data.readline(),end='')
+except IOError as err:
+    print('File error' + str(err))
+finally:
+    if 'data' in locals():
+        data.close()
+    
