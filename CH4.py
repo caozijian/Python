@@ -58,3 +58,10 @@ try:
         print_lol(other,other_file)
 except IOError as err:
     print('file error '+ str(err))
+
+import pickle
+with open('mydata.pickle','wb') as mysavedata:
+    pickle.dump([1,2,'three'],mysavedata)
+with open('mydata.pickle','rb') as myrestoredata:
+    a_list = pickle.load(myrestoredata)
+print(a_list)
