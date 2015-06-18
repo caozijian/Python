@@ -6,13 +6,13 @@ data = data.split('\t')
 data_op = []
 for each_item in data:
     data_op.append(each_item)
-print(data)
+#print(data)
 
 data_op_byte = []
 for each_item in data_op:
     data_op_byte.append(bytearray(each_item,'utf-8'))
 
-print(data_op_byte)
+#print(data_op_byte)
 
 
 
@@ -34,17 +34,20 @@ def cs(code):
         SQR = sum(Q) + sum(R)
         M = (math.floor(SQR/10)+1)*10-SQR
         CB = math.floor(M/10)
-    code.append(CB)
+        strCB = str(CB)
+    # extend the code
+    code.extend(bytearray(strCB,'utf-8'))
     return code
-        
+'''        
     print(Q)
     print(R)
     print(SQR)
     print(M)
     print(CB)
+'''    
     
-    
-print(data_op_byte[0])
-cs(data_op_byte[0])
+#print(data_op_byte[0])
+for each_item in data_op_byte:
+    print(cs(each_item))
 
         
