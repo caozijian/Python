@@ -32,10 +32,17 @@ def cs(code):
         R.append(bit_of_code - 10*temp)
         #round(bit_of_code*j/10-math.floor(bit_of_code*j/10),2))
         SQR = sum(Q) + sum(R)
-        
+        M = (math.floor(SQR/10)+1)*10-SQR
+        CB = math.floor(M/10)
+    code.append(CB)
+    return code
         
     print(Q)
     print(R)
+    print(SQR)
+    print(M)
+    print(CB)
+    
     
 print(data_op_byte[0])
 cs(data_op_byte[0])
