@@ -1,3 +1,5 @@
+# This is edit by VIM 
+# 2015.6.20 First try to conig in Ubuntu.
 import math
 fin = open('start.txt','r')
 data = fin.read()
