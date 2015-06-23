@@ -64,14 +64,28 @@ def cs(code):
 ##    print(CB)
     
     
-#print(data_op_byte[0])
-
-fin = open('dumycode.txt','w')
-
-# dumy code
-for each_item in data_op:
-    for i in range(1000):
-        temp = str(int(each_item)+i)
-##        print(cs(temp))
-        fin.write(cs(temp)+'\n')
-fin.close()
+# Test code
+# The correct results are
+##912154906728
+##701348355941
+##207744475920
+##201657318097
+##902086211164
+##033152369988
+##207727165726
+print(cs('91215490672'))
+print(cs('70134835594'))
+print(cs('20774447592'))
+print(cs('20165731809'))
+print(cs('90208621116'))
+print(cs('03315236998'))
+print(cs('20772716572'))
+##fin = open('dumycode.txt','w')
+##
+### dumy code
+##for each_item in data_op:
+##    for i in range(1000):
+##        temp = str(int(each_item)+i)
+####        print(cs(temp))
+##        fin.write(cs(temp)+'\n')
+##fin.close()
