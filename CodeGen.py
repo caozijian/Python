@@ -1,17 +1,24 @@
 # This is edit by VIM 
 # 2015.6.20 First try to conig in Ubuntu.
+# Generate the code and target chute no
+# 2015-06-24 Revise the comment.
+# Todo
+# 1 Auto generate the target chute no
+# 2 Generate the SQL statements
+
 import math
+# Original Data
 fin = open('start.txt','r')
 data = fin.read()
 fin.close()
+# clean the data
 
 data = data.strip('\n')
 data = data.split('\t')
+# data_op is operation raw data.
 data_op = []
 for each_item in data:
     data_op.append(each_item)
-#print(data)
-# data_op is operation raw data.
 
 ### Convert to bytearray are not necessary.
 ### You can just use int(i) to convert a char to a number.
@@ -23,15 +30,19 @@ for each_item in data:
 ###print(data_op_byte)
 
 
-#Demo code is 912 154 906 728, 991 432 570 015
-    
+# Demo code are 912 154 906 728, 991 432 570 015
+
+# Compute the check bit and extend the code.    
 def cs(code):
+    # The index
     i = 0
     j = 0
+    
     A = []
     P = []
     R = []
     Q = []
+
     temp = 0
     # reverse a string
     code = code[::-1]
@@ -48,8 +59,9 @@ def cs(code):
     strCB = str(CB)
     # extend the code
     #code.extend(bytearray(strCB,'utf-8'))
-    code=code[::-1]+strCB
+    code = code[::-1] + strCB
     return code
+##    just for debug.
 ##    print('A is:')
 ##    print(A)
 ##    print('P is:')
@@ -73,6 +85,7 @@ def cs(code):
 ##902086211164
 ##033152369988
 ##207727165726
+
 print(cs('91215490672'))
 print(cs('70134835594'))
 print(cs('20774447592'))
@@ -80,6 +93,7 @@ print(cs('20165731809'))
 print(cs('90208621116'))
 print(cs('03315236998'))
 print(cs('20772716572'))
+# File output
 ##fin = open('dumycode.txt','w')
 ##
 ### dumy code
