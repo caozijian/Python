@@ -74,6 +74,10 @@ def cs(code):
 ##    print(SQR)
 ##    print(M)
 ##    print(CB)
+
+# Generate dummy Chute no based on dummy code.
+def dummyChute(code):
+    print(int(code[7:11]))
     
     
 # Test code
@@ -85,14 +89,20 @@ def cs(code):
 ##902086211164
 ##033152369988
 ##207727165726
-
-print(cs('91215490672'))
-print(cs('70134835594'))
-print(cs('20774447592'))
-print(cs('20165731809'))
-print(cs('90208621116'))
-print(cs('03315236998'))
-print(cs('20772716572'))
+##test code
+dummyCode = ['912154906728','701348355941','207744475920'
+             ,'201657318097','902086211164','033152369988'
+             ,'207727165726']
+##test code
+print('----Test code start----')
+print('Format:')
+print('-Bar code')
+print('-Index 7 to 11')
+print('\n')
+for item in dummyCode:
+    print(cs(item))
+    dummyChute(item)
+print('----Test code end----')
 # File output
 ##fin = open('dumycode.txt','w')
 ##
