@@ -34,14 +34,15 @@ def getImg(html):
 
 # 
 # Seperate a reg expression into multi part. You can even get extention file name list from a file.
-
+##May href is hyper ref?
     reg = r'href="(.+?\.css)'
     reg += '|(.+?\.js)"'
     imgre = re.compile(reg)
     imglist = re.findall(imgre,html)
     return imglist
 
-print(getImg(html))
+for each_item in getImg(html):
+    print(each_item)
 
 fin = open("temp.txt",'w')
 fin.write(str(html))
