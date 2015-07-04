@@ -1,6 +1,7 @@
 ## 1 Use convert data to int to catch exception. 
 ## 2 Add a continue to skip following code
 ## 3 Just for debug
+## I'm sorry. I shouldn't commit the code with comment.
 largest = None
 smallest = None
 while True:
