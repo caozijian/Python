@@ -1,30 +1,28 @@
-
+## 1 Use convert data to int to catch exception. 
+## 2 Add a continue to skip following code
+## 3 Just for debug
 largest = None
 smallest = None
 while True:
     num = input("Enter a number: ")
     if num == "done" : break
-    if smallest is None:
-        largest = num
-        smallest = num
-##        print("Oh!No!")
-##        
-##    try:
-####        if (type(num) == int) and (largest == None):
-####            largest = num
-####            smallest = num
-####
-##
-##    except:
-##        print("Invalid input")
+    try:
+        num = int(num) #1
+        if (smallest is None) or (largest is None):
+            largest = num
+            smallest = num
+##            print("init")
+    except:
+        print("Invalid input")
+        continue # 2 
+    
+    if (num < smallest): smallest = num 
+    elif (num > largest): largest = num
+##    print(largest, smallest) #3
 
 # fail to complete the function to get max and min value.
 # 0704
-    if (num > largest):
-        largest = num
-    elif (num < smallest):
-        smallest = num        
-    print(largest, smallest)
 
-print("Maximum", largest)
-print("Minimum", smallest)
+
+print("Maximum is", largest)
+print("Minimum is", smallest)
