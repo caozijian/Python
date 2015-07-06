@@ -14,7 +14,7 @@ def getHtml(url):
     headers = {'User-Agent':'Mozilla/5.0 (X11; U; Linux i686)Gecko/20141127 Firefox/2.0.0.11'}
     #req = urllib.request(url=url,headers=headers)
     page = urllib.request.urlopen(url)
-    print(page.info())
+##    print(page.info())
     raw_html = page.read()
     html = raw_html.decode("utf-8")
 ##    print(raw_html)
@@ -37,13 +37,13 @@ def getImg(html):
 ##May href is hyper ref?
 ##You can get the list from a file.
     reglist = ['css','js']
-    reg = r'href="(.+?\.'
+    reg = r'^href="(.+?\.'
     for i in range(len(reglist)-1):
          reg = reg + reglist[i] + ')|(.+?\.'
     reg += reglist[i+1]
     reg += ')"'
 ##    reg += '|(.+?\.js)"'
-    print(reg)
+##    print(reg)
     imgre = re.compile(reg)
     imglist = re.findall(imgre,html)
     return imglist
