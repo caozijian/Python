@@ -37,11 +37,14 @@ def getImg(html):
 ##May href is hyper ref?
 ##You can get the list from a file.
     reglist = ['css','js']
-    reg = r'^href="(.+?\.'
-    for i in range(len(reglist)-1):
-         reg = reg + reglist[i] + ')|(.+?\.'
-    reg += reglist[i+1]
-    reg += ')"'
+##    reg = r'^href="(.+?\.'
+    # try to modify the regx to get new result.
+    reg = r'href="(.+?\.css)"'
+    
+##    for i in range(len(reglist)-1):
+##         reg = reg + reglist[i] + ')|(.+?\.'
+##    reg += reglist[i+1]
+##    reg += ')"'
 ##    reg += '|(.+?\.js)"'
 ##    print(reg)
     imgre = re.compile(reg)
