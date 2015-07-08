@@ -20,9 +20,7 @@ def getHtml(url):
 ##    print(raw_html)
     return html
 
-html = getHtml("http://www.python.org")
-
-def getImg(html):
+def getRef(html):
 ##Python regular expression
 ##The special characters are:
 ##    '.'(Dot.) In the default mode, this matches any character except a newline. If the DOTALL flag has been specified, this matches any character including a newline.
@@ -51,10 +49,23 @@ def getImg(html):
     imglist = re.findall(imgre,html)
     return imglist
 
-for each_item in getImg(html):
-    print(each_item)
+## This function get ref file path from a web page.
+def getRefFile(url):
+    html = getHtml(url)
+    for each_item in getImg(html):
+        print(each_item)
+        
+def getBusSchedule():
+    headers = {'User-Agent':'Mozilla/5.0 (X11; U; Linux i686)Gecko/20141127 Firefox/2.0.0.11'}
+    url = "http://wap.ksbus.com.cn/lineGps/843/upOrDown/0/station/-1/order/-1"
+    page = urllib.request.urlopen(url)
+    raw_html = page.read()
+    html = raw_html
+    print(html)
 
-fin = open("temp.txt",'w')
-fin.write(str(html))
-fin.close()
+getBusSchedule()
+
+##fin = open("temp.txt",'w')
+##fin.write(str(html))
+##fin.close()
 
