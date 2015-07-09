@@ -56,7 +56,17 @@ def getRefFile(url):
         print(each_item)
         
 def getBusSchedule():
-    headers = {'User-Agent':'Mozilla/5.0 (X11; U; Linux i686)Gecko/20141127 Firefox/2.0.0.11'}
+##    headers = {'User-Agent':'Mozilla/5.0 (X11; U; Linux i686)Gecko/20141127 Firefox/2.0.0.11'}
+    headers =  {'GET /lineGps/843/upOrDown/0/station/-1/order/-1 HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Accept-Language: en-US,en;q=0.8,zh-Hans-CN;q=0.5,zh-Hans;q=0.3
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: wap.ksbus.com.cn
+Connection: Keep-Alive
+Cookie: page_scroll=0
+'}
+
     url = "http://wap.ksbus.com.cn/lineGps/843/upOrDown/0/station/-1/order/-1"
     page = urllib.request.urlopen(url)
     raw_html = page.read()
