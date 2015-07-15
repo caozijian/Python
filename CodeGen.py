@@ -8,6 +8,9 @@
 #   CLI for input barcode range, ld and time. I think that time can get from system.
 
 import math
+import time
+import datetime
+
 # Original Data
 fin = open('start.txt','r')
 data = fin.read()
@@ -107,8 +110,12 @@ dummyCode = ['41300100076',
              '41300800076',
              '41300900076',
              '41301000076']
+## Main Section
+nStart =input("Please input the start index: ")
+nCount = input("Please input the count: ")
+nTarget = input("Please input the target chute: ")
 
-##test code
+## Test code
 print('----Test code start----')
 print('Format:')
 print('-Bar code')
@@ -118,6 +125,9 @@ for item in dummyCode:
     print(cs(item))
     dummyChute(item)
 print('----Test code end----')
+
+
+# Output Section
 # File output
 ##fin = open('dumycode.txt','w')
 ##
