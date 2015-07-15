@@ -4,7 +4,8 @@
 # 2015-06-24 Revise the comment.
 # Todo
 # 1 Auto generate the target chute no
-# 2 Generate the SQL statements
+# 2 Generate the SQL statements. Change this requirement, Just need to generate the barcode, ld, time csv formated data.
+#   CLI for input barcode range, ld and time. I think that time can get from system.
 
 import math
 # Original Data
