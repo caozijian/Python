@@ -115,6 +115,7 @@ nStart =input("Please input the start index: ")
 nCount = input("Please input the count: ")
 nTarget = input("Please input the target chute: ")
 
+
 ## Test code
 print('----Test code start----')
 print('Format:')
