@@ -9,6 +9,10 @@
 import urllib.request
 import urllib.error
 import re
+# pip3.4.exe install httplib2
+import httplib2 as client
+import time
+import os
 
 
 def getHtml(url):
@@ -65,7 +69,15 @@ def getBusSchedule():
     raw_html = page.read()
     html = raw_html
     print(html)
+def get_webservertime(host):
+    conn=client.HTTPConnection(host)
+    conn.request("GET","/")
+    r = conn.getresponse()
+    ts = r.getheader('date')
+    local_time = time.mktime(time.strptime(ts[5:],"%d %b %Y %H:%M:%S GMT"))
+    print(local_time)
 
+get_webservertime('www.baidu.com')
 getBusSchedule()
 
 ##fin = open("temp.txt",'w')
