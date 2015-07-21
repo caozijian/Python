@@ -69,11 +69,12 @@ def getBusSchedule():
     raw_html = page.read()
     html = raw_html
     print(html)
+    
 def get_webservertime(host):
-    conn=client.HTTPConnection(host)
-    conn.request("GET","/")
-    r = conn.getresponse()
-    ts = r.getheader('date')
+    h = client.Http(".cache")  
+    resp, content = h.request("http://www.baidu.com/", "GET")  
+    print(content)
+    ts = resp.getheader('date')
     local_time = time.mktime(time.strptime(ts[5:],"%d %b %Y %H:%M:%S GMT"))
     print(local_time)
 
